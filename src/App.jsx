@@ -4,6 +4,7 @@ import "./App.css";
 import { LoginForm } from "./components/LoginForm";
 import { UserContext } from "./context/UserContext";
 import { NavBar } from "./components/NavBar";
+import { LanguageWelcome } from "./components/LanguageWelcome";
 
 export const App = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
@@ -23,6 +24,10 @@ export const App = () => {
 				{user && <p>Bienvenido {user?.name}</p>}
 				{user?.role === "admin" && <button>Administrar</button>}
 				{!user && <p>Bienvenido Invitado</p>}
+			</div>
+			<div className="exercise">
+				<h2>Language selector</h2>
+				<LanguageWelcome/>
 			</div>
 		</div>
 	);
